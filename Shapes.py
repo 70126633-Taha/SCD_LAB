@@ -39,6 +39,9 @@ class Rectangle(Shape):
     def perimeter(self):
         return 2 * (self._width + self._height)
 
+    def area_to_perimeter_ratio(self):
+        return self.area() / self.perimeter()
+
 
 class Circle(Shape):
     def __init__(self, radius):
@@ -60,13 +63,20 @@ class Circle(Shape):
     def perimeter(self):
         return 2 * math.pi * self._radius
 
-# Example usage:
+    def area_to_perimeter_ratio(self):
+        return self.area() / self.perimeter()
+
 if __name__ == "__main__":
     rectangle = Rectangle(5, 10)
-    print("Rectangle Area:", rectangle.area())
-    print("Rectangle Perimeter:", rectangle.perimeter())
-
     circle = Circle(7)
-    print("Circle Area:", circle.area())
-    print("Circle Perimeter:", circle.perimeter())
 
+    # Print details of Rectangle and Circle, including the area-to-perimeter ratio
+    print("Rectangle Details:")
+    print("Area:", rectangle.area())
+    print("Perimeter:", rectangle.perimeter())
+    print("Area-to-Perimeter Ratio:", rectangle.area_to_perimeter_ratio())
+
+    print("\nCircle Details:")
+    print("Area:", circle.area())
+    print("Perimeter:", circle.perimeter())
+    print("Area-to-Perimeter Ratio:", circle.area_to_perimeter_ratio())
